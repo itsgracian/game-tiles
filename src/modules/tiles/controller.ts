@@ -3,7 +3,7 @@ import helper from './helper';
 export class TileController {
   private storage: Array<string[]> = [];
   constructor() {
-    this.storage = helper.generateMatrix(6, 6);
+    this.storage = helper.generateMatrix(6);
   }
   startGame = (_req: Request, res: Response) => {
     try {
