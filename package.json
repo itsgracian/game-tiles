@@ -8,8 +8,8 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "start": "ts-node src/index",
-    "start:dev": "nodemon --exec ts-node src/index --watch src",
+    "start": "ts-node src/index.ts",
+    "start:dev": "nodemon --exec ts-node src/index.ts --watch src",
     "test": "jest",
     "format": "prettier --write '**/*.{ts,js,css,html}'"
   },
