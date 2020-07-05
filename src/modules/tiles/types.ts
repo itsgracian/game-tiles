@@ -3,6 +3,6 @@ export interface ITilesStorage {
   number: number;
 }
 
-export interface IGenerateResponse{
-    [key: string]: any;
+export interface IGenerateResponse {
+  [key: string]: any;
 }
