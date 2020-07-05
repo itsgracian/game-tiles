@@ -11,15 +11,13 @@ export class TileController {
   startGame = (_req: Request, res: Response) => {
     try {
       const { response } = helper;
-      return res
-        .status(200)
-        .json(
-          response('data', {
-            result: this.storage,
-            colors: this.colors,
-            resultLength: this.storage.length,
-          }),
-        );
+      return res.status(200).json(
+        response('data', {
+          result: this.storage,
+          colors: this.colors,
+          resultLength: this.storage.length,
+        }),
+      );
     } catch (error) {
       const { response } = helper;
       return res.status(500).json(
