@@ -4,6 +4,8 @@ const currentColors = (colors) => {
     for (let i in colors) {
       const create = document.createElement('div');
       create.setAttribute('class', 'ch-color');
+      create.setAttribute('color', colors[i]);
+      create.setAttribute('onclick', 'onChooseColor(event)');
       create.style.background = colors[i];
       element.appendChild(create);
     }
@@ -44,8 +46,13 @@ const find = async () => {
   }
 };
 
-window.onload = function () {
-  find();
+const onChooseColor = (event) => {
+  const { target } = event;
+  const chosenColor = target.getAttribute('color');
+  console.log(chosenColor);
 };
 
 // handle click event
+window.onload = function () {
+  find();
+};

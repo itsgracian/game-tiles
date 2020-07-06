@@ -26,5 +26,19 @@ export class TileController {
       );
     }
   };
+
+  playGame = (req: Request, res: Response) => {
+    const { response } = helper;
+    try {
+      const { color } = req.body;
+      return res.status(200).json(response('data', { result: 'welcome' }));
+    } catch (error) {
+      return res.status(500).json(
+        response('error', {
+          serverError: 'something wrong please try again later',
+        }),
+      );
+    }
+  };
 }
 export default new TileController();
