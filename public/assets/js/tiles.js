@@ -46,10 +46,16 @@ const find = async () => {
   }
 };
 
-const onChooseColor = (event) => {
+const onChooseColor = async(event) => {
   const { target } = event;
   const chosenColor = target.getAttribute('color');
-  console.log(chosenColor);
+  try {
+    const { data:res } = await axios.post('/api/play', { color: chosenColor });
+    const { data } = res;
+    console.log(data);
+  } catch (error) {
+    
+  }
 };
 
 // handle click event

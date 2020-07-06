@@ -1,5 +1,5 @@
 import { IGenerateResponse } from './types';
-
+import lodash from 'lodash';
 export class TilesHelper {
   setRandomColor = (): string => {
     const colorSign = '#';
@@ -36,5 +36,22 @@ export class TilesHelper {
       [property]: data,
     };
   };
+
+  findColor = (result: Array<string[]>, color: string)=>{
+    const map: Array<string> = [];
+    const divider: Array<string> = [];
+    const origins: Array<string> = [];
+    const upperLeftCorner:number = 0;
+    for(let i =0; i<result.length; i++){
+      for(let j=0; j<result[i].length; j++){
+          map.push(result[i][j]);
+      }
+    }
+    // divid length of map to 4
+    if(map.length>0){
+      const find = lodash.filter(map,(o)=> (o==color));
+      console.log(find);
+    }
+  }
 }
 export default new TilesHelper();
