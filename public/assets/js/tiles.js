@@ -20,7 +20,7 @@ const displayTiles = (result) => {
     let ctx = canvas.getContext('2d');
     for (let i in result) {
       for (let j in result[i]) {
-        let xPos = i * tileSize + 2;
+        let xPos = i * tileSize;
         let yPos = j * tileSize;
         ctx.fillStyle = result[i][j];
         ctx.fillRect(xPos, yPos, tileSize, tileSize);
@@ -44,6 +44,8 @@ const find = async () => {
   }
 };
 
-window.onload= function(){
-    find();
-}
+window.onload = function () {
+  find();
+};
+
+// handle click event
