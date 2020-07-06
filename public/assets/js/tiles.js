@@ -11,7 +11,6 @@ const currentColors = (colors) => {
     }
   }
 };
-
 const displayTiles = (result) => {
   const element = document.querySelector('.game-board');
   const canvas = document.createElement('canvas');
@@ -46,15 +45,19 @@ const find = async () => {
   }
 };
 
-const onChooseColor = async(event) => {
+const onChooseColor = async (event) => {
   const { target } = event;
   const chosenColor = target.getAttribute('color');
+  const element = document.querySelector('.game-board');
   try {
-    const { data:res } = await axios.post('/api/play', { color: chosenColor });
-    const { data } = res;
-    console.log(data);
+    const { data: res } = await axios.post('/api/play', { color: chosenColor });
+    const {
+      data: { result },
+    } = res;
+    element.innerHTML = '';
+    displayTiles(result);
   } catch (error) {
-    
+    alert('something wrong please try again later.');
   }
 };
 

@@ -31,8 +31,8 @@ export class TileController {
     const { response } = helper;
     try {
       const { color } = req.body;
-      helper.findColor(this.storage, color);
-      return res.status(200).json(response('data', { result: color }));
+      const result = this.storage.reverse();
+      return res.status(200).json(response('data', { result }));
     } catch (error) {
       return res.status(500).json(
         response('error', {
