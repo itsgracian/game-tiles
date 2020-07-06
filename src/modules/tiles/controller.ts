@@ -15,7 +15,6 @@ export class TileController {
         response('data', {
           result: this.storage,
           colors: this.colors,
-          resultLength: this.storage.length,
         }),
       );
     } catch (error) {
